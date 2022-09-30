@@ -9,7 +9,7 @@ this project runs on json-server so it is "backend-less"
 ## than in another terminal run 
 
 ```npm start```.
-# you do need to pick a user from the users.json file and use his email and password to log into the app 
+### you do need to pick a user from the users.json file and use his email and password to log into the app 
 
 
 Enjoi...

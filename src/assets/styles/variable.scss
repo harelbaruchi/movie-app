@@ -7,14 +7,14 @@ File: scss
 // Variables
 // @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
 
-$bodyfont: 'Poppins', sans-serif;
-$headingfont: 'Poppins', sans-serif;
+$bodyfont: "Poppins", sans-serif;
+$headingfont: "Poppins", sans-serif;
 
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 
 /*Material Theme Colors*/
 
-$primary: mat-palette($mat-red, 600);
+$primary: mat-palette($mat-purple, 600);
 $accent: mat-palette($mat-red, 500);
 $warn: mat-palette($mat-red, 500);
 $theme: mat-light-theme($primary, $accent, $warn);
@@ -24,7 +24,7 @@ $foreground: map-get($theme, foreground);
 @include mat-core();
 
 $custom-typography: mat-typography-config(
-  $font-family: 'Poppins, sans-serif'
+  $font-family: "Poppins, sans-serif",
 );
 
 // Override the typography in the core CSS.
@@ -51,7 +51,7 @@ $font-16: 16px;
 
 $light-text: #a6b7bf;
 $themecolor: #1e88e5;
-$themecolor-alt: #e53935;
+$themecolor-alt: #4a148c;
 $themecolor-dark: #028ee1;
 
 /*bootstrap Color*/

@@ -5,14 +5,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutes } from './dashboard.routing';
 import { MaterialModule } from '../shared/material-module';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
-    RouterModule.forChild(DashboardRoutes)
+    MatIconModule,
+    RouterModule.forChild(DashboardRoutes),
   ],
-  declarations: [DashboardComponent]
+  declarations: [DashboardComponent],
 })
-export class DashboardModule { }
+export class DashboardModule {}

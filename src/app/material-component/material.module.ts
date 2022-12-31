@@ -11,9 +11,9 @@ import { MaterialRoutes } from './material.routing';
 import { MaterialModule } from '../shared/material-module';
 import { ConfirmationComponent } from './dialog/confirmation/confirmation.component';
 
-
 import { ManageJokeComponent } from './manage-joke/manage-joke.component';
 import { JokeComponent } from './dialog/joke/joke.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -24,13 +24,10 @@ import { JokeComponent } from './dialog/joke/joke.component';
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    CdkTableModule
+    CdkTableModule,
+    MatIconModule,
   ],
   providers: [],
-  declarations: [
-    ConfirmationComponent,
-    ManageJokeComponent,
-    JokeComponent    
-  ]
+  declarations: [ConfirmationComponent, ManageJokeComponent, JokeComponent],
 })
 export class MaterialComponentsModule {}

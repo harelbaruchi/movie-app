@@ -24,30 +24,39 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loginForm= this.formBuilder.group({
-      email:[null, [Validators.required, Validators.pattern(GlobalConstants.emailRegex)]],
-      password:[null, [Validators.required]]
-    })
+    this.loginForm = this.formBuilder.group({
+      email: [
+        null,
+        [Validators.required, Validators.pattern(GlobalConstants.emailRegex)],
+      ],
+      password: [null, [Validators.required]],
+    });
   }
 
-  handleSubmit(){
-    let formData= this.loginForm.value;
-    let data={
+  handleSubmit() {
+    let formData = this.loginForm.value;
+    let data = {
       email: formData.email,
-      password: formData.password
-    }
-    this.userService.login(data).subscribe((response: any)=>{
-      this.dialogRef.close();
-      console.log(response.token);
-       localStorage.setItem('token', response.token);
-       this.router.navigate(['/projects/dashboard'])
-    }, (error)=>{
-      if(error.error?.message){
-        this.responseMessage= error.error?.message;
-      }else{
-        this.responseMessage= GlobalConstants.genericError;
+      password: formData.password,
+    };
+    this.userService.login(data).subscribe(
+      (response: any) => {
+        this.dialogRef.close();
+        console.log(response.token);
+        localStorage.setItem('token', response.token);
+        this.router.navigate(['/projects']);
+      },
+      (error) => {
+        if (error.error?.message) {
+          this.responseMessage = error.error?.message;
+        } else {
+          this.responseMessage = GlobalConstants.genericError;
+        }
+        this.snackbarService.openSnackBar(
+          this.responseMessage,
+          GlobalConstants.error
+        );
       }
-      this.snackbarService.openSnackBar(this.responseMessage,GlobalConstants.error);
-    })
+    );
   }
 }

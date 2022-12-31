@@ -17,13 +17,11 @@ import { SignupComponent } from './signup/signup.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
 import { TokenInterceptorInterceptor } from './services/token-interceptor.interceptor';
-
-
-
-
+import { MatIconModule } from '@angular/material/icon';
+import { PackagesComponent } from './packages/packages.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     HomeComponent,
     FullComponent,
@@ -31,9 +29,9 @@ import { TokenInterceptorInterceptor } from './services/token-interceptor.interc
     AppSidebarComponent,
     SignupComponent,
     ForgotPasswordComponent,
-    LoginComponent
-    
-   ],
+    LoginComponent,
+    PackagesComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -43,9 +41,18 @@ import { TokenInterceptorInterceptor } from './services/token-interceptor.interc
     MaterialModule,
     FlexLayoutModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
   ],
-  providers: [HttpClientModule,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorInterceptor, multi:true}],
-  bootstrap: [AppComponent]
+  exports: [MatIconModule],
+  providers: [
+    HttpClientModule,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

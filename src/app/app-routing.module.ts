@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FullComponent } from './layouts/full/full.component';
+import { PackagesComponent } from './packages/packages.component';
 import { RouteGuardService } from './services/route-guard.service';
 
 const routes: Routes = [
@@ -12,33 +13,45 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/projects/dashboard',
+        redirectTo: '/projects/packages',
         pathMatch: 'full',
       },
       {
         path: '',
-        loadChildren:
-          () => import('./material-component/material.module').then(m => m.MaterialComponentsModule), // route guard implementation.
-          canActivate:[RouteGuardService],
-          data: {
-            expectedRole: ['admin','user']
-          }
+        loadChildren: () =>
+          import('./material-component/material.module').then(
+            (m) => m.MaterialComponentsModule
+          ), // route guard implementation.
+        canActivate: [RouteGuardService],
+        data: {
+          expectedRole: ['admin', 'user'],
+        },
+      },
+      {
+        path: 'packages',
+        loadChildren: () =>
+          import('./packages/packages.module').then((m) => m.PackagesModule),
+        canActivate: [RouteGuardService],
+        data: {
+          expectedRole: ['admin', 'user'],
+        },
       },
       {
         path: 'dashboard',
-        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
-        canActivate:[RouteGuardService],
+        loadChildren: () =>
+          import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+        canActivate: [RouteGuardService],
         data: {
-          expectedRole: ['admin','user']
-        }
-      }
-    ]
+          expectedRole: ['admin', 'user'],
+        },
+      },
+    ],
   },
-  { path: '**', component: HomeComponent }
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -10,9 +10,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialRoutes } from './material.routing';
 import { MaterialModule } from '../shared/material-module';
 import { ConfirmationComponent } from './dialog/confirmation/confirmation.component';
-
-import { ManageJokeComponent } from './manage-joke/manage-joke.component';
-import { JokeComponent } from './dialog/joke/joke.component';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
@@ -28,6 +25,6 @@ import { MatIconModule } from '@angular/material/icon';
     MatIconModule,
   ],
   providers: [],
-  declarations: [ConfirmationComponent, ManageJokeComponent, JokeComponent],
+  declarations: [ConfirmationComponent],
 })
 export class MaterialComponentsModule {}

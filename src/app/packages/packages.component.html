@@ -1,1 +1,52 @@
-<p>packages works!</p>
+<div class="carousel-body">
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let package of packages">
+      <div class="main-div">
+        <mat-card class="container">
+          <mat-card-header class="heading">
+            <table>
+              <td>
+                <tr>
+                  <mat-card-header class="title">
+                    {{ package.title }}
+                  </mat-card-header>
+                </tr>
+                <tr>
+                  <mat-card-content class="price">
+                    {{ package.price }}
+                  </mat-card-content>
+                </tr>
+                <tr>
+                  <mat-card-footer class="month">
+                    {{ package.pMonth }}
+                  </mat-card-footer>
+                </tr>
+              </td>
+            </table>
+          </mat-card-header>
+
+          <img matCardImage src="Card wide image source" />
+          <mat-card-content>
+            <mat-card-subtitle class="detail1">
+              {{ package.detail1 }}
+            </mat-card-subtitle>
+            <mat-card-subtitle class="detail2">
+              {{ package.detail2 }}
+            </mat-card-subtitle>
+            <mat-card-subtitle class="detail3">
+              {{ package.detail3 }}
+            </mat-card-subtitle>
+          </mat-card-content>
+          <mat-card-actions class="action-button">
+            <button mat-button>להצטרפות</button>
+          </mat-card-actions>
+          <mat-card-footer>
+            <mat-panel-description>{{
+              package.supriseBox
+            }}</mat-panel-description>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div>

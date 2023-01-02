@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { TokenInterceptorInterceptor } from './services/token-interceptor.interceptor';
 import { MatIconModule } from '@angular/material/icon';
 import { PackagesComponent } from './packages/packages.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { PackagesComponent } from './packages/packages.component';
     SharedModule,
     HttpClientModule,
     MatIconModule,
+    CarouselModule,
   ],
   exports: [MatIconModule],
   providers: [

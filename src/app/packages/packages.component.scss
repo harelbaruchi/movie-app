@@ -1,0 +1,80 @@
+@font-face {
+  font-family: simpler-black;
+  src: url("/assets/fonts/simpler-black-webfont.eot");
+}
+@font-face {
+  font-family: simpler-bold;
+  src: url("/assets/fonts/simpler-bold-webfont.eot") format("truetype");
+}
+
+.carousel-body {
+  background-image: url("/assets/img/packs_BG.png");
+  background-size: 100%;
+  height: 450px;
+  width: auto;
+}
+
+.container {
+  text-align: center;
+  width: 75%;
+  height: 500px;
+}
+
+.main-div {
+  display: flex;
+}
+
+.main-div:hover {
+  .heading {
+    background-image: url("/assets/img/package_bg_selected.png");
+    color: #ffff;
+  }
+  .price {
+    color: #ffff;
+  }
+  .month {
+    color: #ffff;
+    font-family: simpler-black;
+  }
+}
+
+.heading {
+  background-image: url("/assets/img/package_bg.png");
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 200px;
+}
+
+.title {
+  font-family: "simpler-black";
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.price {
+  font-family: "simpler-bold";
+  font-size: 96px;
+  color: rgb(78, 227, 210);
+  margin-top: 34px;
+}
+
+.month {
+  font-family: simpler-black;
+  font-size: 23px;
+  color: rgb(78, 227, 210);
+  margin-top: 20px;
+}
+
+.action-button {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-button {
+  width: 250px;
+  height: 55px;
+  background-color: rgb(78, 227, 210);
+}

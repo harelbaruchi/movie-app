@@ -36,6 +36,10 @@
     color: #ffff;
     font-family: simpler-black;
   }
+  .container {
+    box-shadow: 1px 8px 20px grey;
+    -webkit-transition: box-shadow 0.3s ease-in;
+  }
 }
 
 .heading {

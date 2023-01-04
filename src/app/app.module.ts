@@ -17,10 +17,10 @@ import {
   HTTP_INTERCEPTORS,
   HttpClientJsonpModule,
 } from '@angular/common/http';
-import { SignupComponent } from './signup/signup.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { LoginComponent } from './login/login.component';
-import { TokenInterceptorInterceptor } from './services/token-interceptor.interceptor';
+// import { SignupComponent } from './signup/signup.component';
+// import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+// import { LoginComponent } from './login/login.component';
+// import { TokenInterceptorInterceptor } from './services/token-interceptor.interceptor';
 import { MatIconModule } from '@angular/material/icon';
 import { PackagesComponent } from './packages/packages.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -35,9 +35,6 @@ import { MoviesService } from './services/movies.service';
     FullComponent,
     AppHeaderComponent,
     AppSidebarComponent,
-    SignupComponent,
-    ForgotPasswordComponent,
-    LoginComponent,
     PackagesComponent,
     SearchMoviesComponent,
     SearchResultsComponent,
@@ -60,11 +57,11 @@ import { MoviesService } from './services/movies.service';
   providers: [
     MoviesService,
     HttpClientModule,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptorInterceptor,
-      multi: true,
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: TokenInterceptorInterceptor,
+    //   multi: true,
+    // },
   ],
   bootstrap: [AppComponent],
 })

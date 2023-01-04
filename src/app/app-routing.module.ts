@@ -7,14 +7,14 @@ import { SearchMoviesComponent } from './search-movies/search-movies.component';
 import { RouteGuardService } from './services/route-guard.service';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: FullComponent },
   {
     path: 'projects',
     component: FullComponent,
     children: [
       {
         path: '',
-        redirectTo: '/projects/packages',
+        redirectTo: '/projects/search-movies',
         pathMatch: 'full',
       },
       {
@@ -23,10 +23,6 @@ const routes: Routes = [
           import('./material-component/material.module').then(
             (m) => m.MaterialComponentsModule
           ), // route guard implementation.
-        canActivate: [RouteGuardService],
-        data: {
-          expectedRole: ['admin', 'user'],
-        },
       },
       {
         path: 'packages',
@@ -41,10 +37,6 @@ const routes: Routes = [
         path: 'dashboard',
         loadChildren: () =>
           import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
-        canActivate: [RouteGuardService],
-        data: {
-          expectedRole: ['admin', 'user'],
-        },
       },
     ],
   },

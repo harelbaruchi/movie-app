@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FullComponent } from './layouts/full/full.component';
 import { PackagesComponent } from './packages/packages.component';
+import { SearchMoviesComponent } from './search-movies/search-movies.component';
 import { RouteGuardService } from './services/route-guard.service';
 
 const routes: Routes = [
@@ -31,10 +32,10 @@ const routes: Routes = [
         path: 'packages',
         loadChildren: () =>
           import('./packages/packages.module').then((m) => m.PackagesModule),
-        canActivate: [RouteGuardService],
-        data: {
-          expectedRole: ['admin', 'user'],
-        },
+      },
+      {
+        path: 'search-movies',
+        component: SearchMoviesComponent,
       },
       {
         path: 'dashboard',

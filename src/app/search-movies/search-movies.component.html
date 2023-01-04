@@ -1,0 +1,32 @@
+<mat-card>
+  <b>
+    <h1>Find Your Movie</h1>
+  </b>
+  <mat-dialog-content class="mat-typography">
+    <form [formGroup]="movieSearchForm">
+      <div fxFlex fxLayout=" row wrap">
+        <mat-form-field appearance="fill">
+          <mat-label>search movie title</mat-label>
+          <input matInput formControlName="title" required />
+          <mat-error *ngIf="movieSearchForm.controls.title.invalid">
+            <span *ngIf="movieSearchForm.controls.title.errors.required"
+              >this field is mandatory</span
+            >
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="center">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="handleSubmit()"
+      [disabled]="movieSearchForm.controls.title.invalid"
+    >
+      search
+    </button>
+  </mat-dialog-actions>
+</mat-card>
+<app-search-results [moviesList]="movies"> </app-search-results>

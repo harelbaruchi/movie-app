@@ -17,6 +17,7 @@ const MENUITEMS = [
   //   { state: 'dashboard', name: 'dashboard', icon: 'dashboard', role: '' },
   //   { state: 'joke', name: 'Manage Jokes', icon: 'book', role: '' },
   { state: 'packages', name: 'packages', icon: 'dashboard', role: '' },
+  { state: 'search-movies', name: 'search-movies', icon: 'movie', role: '' },
 ];
 
 @Injectable()

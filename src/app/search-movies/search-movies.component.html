@@ -29,4 +29,5 @@
     </button>
   </mat-dialog-actions>
 </mat-card>
-<app-search-results [moviesList]="movies"> </app-search-results>
+<hr />
+<app-search-results *ngIf="movies" [moviesList]="movies"> </app-search-results>
